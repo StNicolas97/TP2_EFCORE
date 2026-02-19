@@ -5,10 +5,10 @@
         public int Id { get; set; }
 
         public int GroupeId { get; set; }
-        public CoursGroupe Groupe { get; set; } = null!;
+        public CoursGroupe Groupe { get; set; }
 
         public int MoniteurDeCeCoursId { get; set; }
-        public Moniteur MoniteurDeCeCours { get; set; } = null!;
+        public Moniteur MoniteurDeCeCours { get; set; }
 
         public DateTime DateDebut { get; set; }
         public DateTime DateFin { get; set; }

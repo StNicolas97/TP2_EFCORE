@@ -5,10 +5,10 @@
         public int Id { get; set; }
 
         public int UtilisateurId { get; set; }
-        public Utilisateur Utilisateur { get; set; } = null!;
+        public Utilisateur Utilisateur { get; set; }
 
         public int CoursGroupeId { get; set; }
-        public CoursGroupe CoursGroupe { get; set; } = null!;
+        public CoursGroupe CoursGroupe { get; set; }
 
         public DateTime DateInscription { get; private set; }
     }
