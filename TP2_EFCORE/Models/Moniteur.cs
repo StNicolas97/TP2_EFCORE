@@ -8,13 +8,12 @@ namespace TP2_EFCORE.Models
 
         //nav vers Utilisateur
         public int UtilisateurId { get; set; }
-        public Utilisateur Utilisateur { get; set; }
+        public Utilisateur Utilisateur { get; set; } = default!;
 
         [Required]
         public string NoLicence { get; set; } = string.Empty;
 
         //liens vers autres tables
-        public ICollection<Occurrence> Occurrences { get; set; } = new List<Occurrence>();
         public ICollection<CoursGroupe> GroupesParDefault { get; set; } = new List<CoursGroupe>();
 
     }
