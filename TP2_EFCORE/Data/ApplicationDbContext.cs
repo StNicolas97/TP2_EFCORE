@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TP2_EFCORE.Models1;
+using TP2_EFCORE.Models;
 
 namespace TP2_EFCORE.Data
 {
@@ -13,15 +13,27 @@ namespace TP2_EFCORE.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
                  base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<OccurrenceCours>().HasKey(sc => new {sc.CoursId, sc.OccurencesId});
-            modelBuilder.Entity<CoursGroupe>().HasKey(sc => new {sc.CoursId, sc.GroupeId});
-            modelBuilder.Entity<PresenceCours>().HasKey(sc => new { sc.OccurrenceDuCoursId, sc.ParticipantId });
+            //modelBuilder.Entity<OccurrenceCours>().HasKey(sc => new {sc.CoursId, sc.OccurencesId});
+            //modelBuilder.Entity<CoursGroupe>().HasKey(sc => new {sc.CoursId, sc.GroupeId});
+            //modelBuilder.Entity<PresenceCours>().HasKey(sc => new { sc.OccurrenceDuCoursId, sc.ParticipantId });
 
             //Delete
             modelBuilder.Entity<Occurence>()
             .HasOne(o => o.Moniteur)
             .WithMany()
-            .HasForeignKey(o => o.Moniteur)
+            .HasForeignKey(o => o.MoniteurDeCoursId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<PresenceCours>()
+            .HasOne(pc => pc.Utilisateur)
+            .WithMany(u => u.PresencesCours)
+            .HasForeignKey(pc => pc.ParticipantId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<PresenceCours>()
+            .HasOne(pc => pc.Occurence)
+            .WithMany(o => o.PresencesCours)
+            .HasForeignKey(pc => pc.OccurenceDuCoursId)
             .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Inscription>()
