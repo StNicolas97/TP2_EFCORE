@@ -4,12 +4,13 @@
     {
         public int Id { get; set; }
 
-        public int UtilisateurId { get; set; }
-        public Utilisateur Utilisateur { get; set; } = default!;
+        public DateTime DateInscription { get; } = DateTime.Now;
+
+        //Navigations
+        public int UtilisateurId { get; set; }  
+        public Utilisateur Utilisateur { get; set; }
 
         public int CoursGroupeId { get; set; }
-        public CoursGroupe CoursGroupe { get; set; }
-
-        public DateTime DateInscription { get; private set; }
+        public Groupe Groupe { get; set; } 
     }
 }
