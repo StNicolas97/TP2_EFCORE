@@ -12,7 +12,7 @@
         public int? CoursPrealableId { get; set; }
         public Cours? CoursPrealable { get; set; }
 
-        public ICollection<Groupe> Groupes { get; set; }
+        public ICollection<CoursGroupe> Groupes { get; set; }
 
     }
 }

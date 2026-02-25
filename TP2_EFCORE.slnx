@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="TP2_EFCORE/TP2_EFCORE.csproj" />
+  <Project Path="TP2_EFCORECONSOLE/TP2_EFCORECONSOLE.csproj" Id="7ed6991b-cac1-4c75-a5e3-40da7b35d98c" />
 </Solution>

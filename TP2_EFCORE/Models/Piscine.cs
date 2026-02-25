@@ -15,7 +15,7 @@ namespace TP2_EFCORE.Models
         public string CodePostal { get; set; }
         public int CapaciteMaximale { get; set; }
 
-        public ICollection<Groupe> Groupes { get; set; }
+        public ICollection<CoursGroupe> Groupes { get; set; }
 
     }
 }

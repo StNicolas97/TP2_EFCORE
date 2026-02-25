@@ -11,6 +11,6 @@
         public Utilisateur Utilisateur { get; set; }
 
         public int CoursGroupeId { get; set; }
-        public Groupe Groupe { get; set; } 
+        public CoursGroupe Groupe { get; set; } 
     }
 }

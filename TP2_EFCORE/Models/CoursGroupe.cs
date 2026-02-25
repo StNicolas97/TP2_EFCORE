@@ -2,7 +2,7 @@
 
 namespace TP2_EFCORE.Models
 {
-    public class Groupe
+    public class CoursGroupe
     {
         public int Id { get; set; }
         public int NumeroGroupe { get; set; }
@@ -19,7 +19,7 @@ namespace TP2_EFCORE.Models
         public int MoniteurParDefautId { get; set; }
         public Moniteur Moniteur {  get; set; }
 
-        public ICollection<Occurence> Occurences { get; set; }
+        public ICollection<OccurenceCours> Occurences { get; set; }
         public ICollection<Inscription> Inscriptions { get; set; }
     }
 }

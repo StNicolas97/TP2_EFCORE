@@ -9,7 +9,7 @@
         public int UtilisateurId { get; set; }
         public Utilisateur Utilisateur { get; set; }
 
-        public ICollection<Occurence> Occurences { get; set; }
-        public ICollection<Groupe> Groupes { get; set; }
+        public ICollection<OccurenceCours> Occurences { get; set; }
+        public ICollection<CoursGroupe> Groupes { get; set; }
     }
 }
