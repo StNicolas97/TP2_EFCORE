@@ -13,8 +13,6 @@ namespace TP2_EFCORE.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
                  base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<OccurrenceCours>().HasKey(sc => new {sc.CoursId, sc.OccurencesId});
-            //modelBuilder.Entity<CoursGroupe>().HasKey(sc => new {sc.CoursId, sc.GroupeId});
             modelBuilder.Entity<PresenceCours>().HasKey(sc => new { sc.OccurenceDuCoursId, sc.ParticipantId });
             modelBuilder.Entity<PresenceCours>().HasOne(sc => sc.Occurence)
                 .WithMany(sc => sc.PresencesCours)
