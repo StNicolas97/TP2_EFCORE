@@ -44,7 +44,7 @@ namespace TP2_EFCORE.Data
 
             modelBuilder.Entity<Inscription>()
             .HasOne(i => i.Utilisateur)
-            .WithMany()
+            .WithMany(u => u.Inscriptions)
             .HasForeignKey(i => i.UtilisateurId)
             .OnDelete(DeleteBehavior.Restrict);
 

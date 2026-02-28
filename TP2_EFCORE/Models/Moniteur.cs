@@ -3,7 +3,7 @@
     public class Moniteur
     {
         public int Id { get; set; }
-        public string NoLicence { get; set; }
+        public int NoLicence { get; set; }
 
         //Navigations
         public int UtilisateurId { get; set; }

@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TP2_EFCORE.Models1;
+using TP2_EFCORE.Models;
 
 namespace TP2_EFCORE.Controllers
 {
