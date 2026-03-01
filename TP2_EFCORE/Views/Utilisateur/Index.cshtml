@@ -1,0 +1,75 @@
+﻿@model IEnumerable<TP2_EFCORE.Models.Utilisateur>
+
+@{
+    ViewData["Title"] = "Liste des utilisateurs";
+}
+
+<div class="card shadow mb-4">
+
+    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+
+        <h5 class="m-0 font-weight-bold text-primary">
+            Liste des utilisateurs
+        </h5>
+
+        <a asp-action="Create" class="btn btn-primary btn-sm">
+            + Nouvel utilisateur
+        </a>
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle" width="100%">
+
+                <thead>
+                    <tr>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Date de naissance</th>
+                        <th>Date création compte</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Prenom</td>
+                            <td>@item.Nom</td>
+                            <td>@item.DateNaissance</td>
+                            <td>@item.DateCreationCompte</td>
+
+                            <td class="text-center">
+                                <a asp-action="Details"
+                                   asp-route-id="@item.Id"
+                                   class="text-info me-3"
+                                   title="Détails">
+                                    <i class="bi bi-eye-fill"></i>
+                                </a>
+
+                                <a asp-action="Edit"
+                                   asp-route-id="@item.Id"
+                                   class="text-warning me-3"
+                                   title="Modifier">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-id="@item.Id"
+                                   class="text-danger"
+                                   title="Supprimer">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>

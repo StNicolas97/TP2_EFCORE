@@ -1,0 +1,77 @@
+﻿@model IEnumerable<TP2_EFCORE.Models.Piscine>
+
+@{
+    ViewData["Title"] = "Liste des piscines";
+}
+
+<div class="card shadow mb-4">
+
+    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+
+        <h5 class="m-0 font-weight-bold text-primary">
+            Liste des piscines
+        </h5>
+
+        <a asp-action="Create" class="btn btn-primary btn-sm">
+            + Nouvelle piscine
+        </a>
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle" width="100%">
+
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Adresse</th>
+                        <th>Ville</th>
+                        <th>Code postal</th>
+                        <th>Capacité max</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nom</td>
+                            <td>@item.Adresse</td>
+                            <td>@item.Ville</td>
+                            <td>@item.CodePostal</td>
+                            <td>@item.CapaciteMaximale</td>
+
+                            <td class="text-center">
+                                <a asp-action="Details"
+                                   asp-route-id="@item.Id"
+                                   class="text-info me-3"
+                                   title="Détails">
+                                    <i class="bi bi-eye-fill"></i>
+                                </a>
+
+                                <a asp-action="Edit"
+                                   asp-route-id="@item.Id"
+                                   class="text-warning me-3"
+                                   title="Modifier">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-id="@item.Id"
+                                   class="text-danger"
+                                   title="Supprimer">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>

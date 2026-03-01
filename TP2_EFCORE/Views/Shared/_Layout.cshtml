@@ -12,6 +12,7 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -58,7 +59,7 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Cours</a>
+                        <a class="collapse-item" asp-area="" asp-action="Index" asp-controller="Cours">Cours</a>
                         <a class="collapse-item" href="#">Groupes</a>
                         <a class="collapse-item" href="#">Occurrences</a>
                         <div class="collapse-divider"></div>
@@ -72,7 +73,7 @@
 
             <!-- Nav Item - Gestion des lieux -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" asp-area="" asp-controller="Piscine" asp-action="Index">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Piscines</span>
                 </a>
@@ -80,7 +81,7 @@
 
             <!-- Nav Item - Gestion des personnes -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" asp-area="" asp-controller="Utilisateur" asp-action="Index">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Utilisateurs</span>
                 </a>
@@ -304,7 +305,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Fabrice Nicolas</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Fabrice & Chris</span>
                                 <img class="img-profile rounded-circle"
                                      src="img/undraw_profile.svg">
                             </a>
