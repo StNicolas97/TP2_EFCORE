@@ -7,7 +7,7 @@ using TP2_EFCORE.Data;
 
 namespace TP2_EFCORECONSOLE.data
 {
-    internal class ConsoleDbContext
+    public class ConsoleDbContext
     {
         public static ApplicationDbContext CreateDbContext()
         { 

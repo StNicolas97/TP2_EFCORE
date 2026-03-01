@@ -12,8 +12,8 @@ using TP2_EFCORE.Data;
 namespace TP2_EFCORE.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260228133141_Initiale")]
-    partial class Initiale
+    [Migration("20260228235729_initiale")]
+    partial class initiale
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

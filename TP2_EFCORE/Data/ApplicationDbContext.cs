@@ -12,55 +12,33 @@ namespace TP2_EFCORE.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-                 base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<PresenceCours>().HasKey(sc => new { sc.OccurenceDuCoursId, sc.ParticipantId });
-            modelBuilder.Entity<PresenceCours>().HasOne(sc => sc.Occurence)
-                .WithMany(sc => sc.PresencesCours)
-                .HasForeignKey(sc => sc.OccurenceDuCoursId)
-                ;
-            modelBuilder.Entity<PresenceCours>().HasOne(sc => sc.Utilisateur)
-                .WithMany(sc => sc.PresencesCours)
-                .HasForeignKey(sc => sc.ParticipantId);
-
 
             //Delete
-            modelBuilder.Entity<OccurenceCours>()
-            .HasOne(o => o.Moniteur)
-            .WithMany()
-            .HasForeignKey(o => o.MoniteurDeCoursId)
-            .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<PresenceCours>()
-            .HasOne(pc => pc.Utilisateur)
-            .WithMany(u => u.PresencesCours)
-            .HasForeignKey(pc => pc.ParticipantId)
-            .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<PresenceCours>()
-            .HasOne(pc => pc.Occurence)
-            .WithMany(o => o.PresencesCours)
-            .HasForeignKey(pc => pc.OccurenceDuCoursId)
-            .OnDelete(DeleteBehavior.Restrict);
-
             modelBuilder.Entity<Inscription>()
-            .HasOne(i => i.Utilisateur)
-            .WithMany(u => u.Inscriptions)
-            .HasForeignKey(i => i.UtilisateurId)
-            .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(i => i.Utilisateur)
+                .WithMany(u => u.Inscriptions)
+                .HasForeignKey(i => i.UtilisateurId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<OccurenceCours>().HasOne(o => o.Moniteur)
-            .WithMany(o => o.Occurences)
-            .HasForeignKey(f => f.MoniteurDeCoursId);
+            modelBuilder.Entity<OccurenceCours>()
+                .HasOne(o => o.Moniteur)
+                .WithMany(m => m.Occurences)
+                .HasForeignKey(o => o.MoniteurDeCoursId)
+                .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<PresenceCours>()
+                .HasOne(pc => pc.Occurence)
+                .WithMany(o => o.PresencesCours)
+                .HasForeignKey(pc => pc.OccurenceDuCoursId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<PresenceCours>().HasOne(o => o.Occurence)
-            .WithMany(o => o.PresencesCours)
-            .HasForeignKey(f => f.OccurenceDuCoursId);
-
-
-            modelBuilder.Entity<Cours>().HasOne(o => o.CoursPrealable)
-            .WithMany()
-            .HasForeignKey(f => f.CoursPrealableId);
+            modelBuilder.Entity<PresenceCours>()
+                .HasOne(pc => pc.Utilisateur)
+                .WithMany(u => u.PresencesCours)
+                .HasForeignKey(pc => pc.ParticipantId)
+                .OnDelete(DeleteBehavior.Restrict);
 
 
             //Ajout des datas
